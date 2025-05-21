@@ -17,9 +17,6 @@
   
   .calc-row label {
     flex: 1 1 200px;
-    font-size: 1rem;
-    font-weight: 500; 
-    color: var(--gray-3); 
 }
 
 .calc-row input,
