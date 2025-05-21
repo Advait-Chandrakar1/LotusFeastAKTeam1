@@ -1,6 +1,7 @@
+
 .calculator__wrapper {
     background: var(--lightGreen-2);
-    padding: 10rem;
+    padding: 2rem;
     border-radius: 12px;
     margin: 5rem auto;
     box-shadow: var(--shadow-1);
@@ -11,20 +12,10 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: 1.2rem;
-    font-size: 1rem;
-    color: var(--gray-3);
   }
   
   .calc-row label {
     flex: 1 1 200px;
-}
-
-.calc-row input,
-.calc-row select {
-  font-size: 1.1rem; /* Controls input and dropdown text size */
-  padding: 0.6rem;   /* Optional: makes input area a bit taller */
-}
-
   }
   
   .calc-row input,
@@ -76,18 +67,18 @@
   }
   
   .result-card__title {
-    font-size: 50rem;
+    font-size: 1.3rem;
     color: var(--black-1);
     margin-bottom: 0.4rem;
   }
   
   .result-card__cal {
-    font-size: 40rem;
+    font-size: 1rem;
     color: var(--gray-2);
   }
   
   .result-card__serving {
-    font-size: 50rem;
+    font-size: 0.9rem;
     color: var(--gray-3);
   }
   
