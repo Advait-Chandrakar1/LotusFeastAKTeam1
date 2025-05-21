@@ -66,18 +66,18 @@
   }
   
   .result-card__title {
-    font-size: 20rem;
+    font-size: 50rem;
     color: var(--black-1);
     margin-bottom: 0.4rem;
   }
   
   .result-card__cal {
-    font-size: 10rem;
+    font-size: 40rem;
     color: var(--gray-2);
   }
   
   .result-card__serving {
-    font-size: 20rem;
+    font-size: 50rem;
     color: var(--gray-3);
   }
   
