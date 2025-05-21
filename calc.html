@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calorie Calculator | Lotus Feast</title>
+
+  <!-- core styles -->
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./globalStyles.css">
+  <link rel="stylesheet" href="./components.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- page-specific -->
+  <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav__wrapper">
+        <a href="./index.html" class="logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ31GRZaO6qTFzQ3HeHXEhpW36iS5OuMZYqig&s"
+               style="width:150px;height:auto;" alt="Lotus Feast">
+        </a>
+        <nav>
+          <div class="nav__icon">
+            <!-- hamburger icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="feather feather-menu">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6"  x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </div>
+          <div class="nav__bgOverlay"></div>
+          <ul class="nav__list">
+            <div class="nav__close">
+              <!-- close icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6"  y1="6" x2="18" y2="18"/>
+              </svg>
+            </div>
+            <div class="nav__list__wrapper">
+              <li><a class="nav__link" href="./index.html">Home</a></li>
+              <li><a class="nav__link" href="./menu.html">Menu</a></li>
+              <li><a class="nav__link" href="./calc.html">Meal Calculator</a></li>
+              <li><a class="nav__link" href="./about.html">About</a></li>
+              <li><a class="nav__link" href="./contact.html">Contact</a></li>
+              <li><a href="./booking.html" class="btn primary-btn">Book Table</a></li>
+              <li><a class="nav__link" href="./reference.html">Reference</a></li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" data-aos="fade-up">
+    <div class="container">
+      <div class="hero__wrapper">
+        <div class="hero__left" data-aos="fade-left">
+          <div class="hero__left__wrapper">
+            <h1 class="hero__heading">Calorie Calculator</h1>
+            <p class="hero__info">
+              Tell us a bit about yourself, and we'll suggest dishes that match your calorie goals.
+            </p>
+          </div>
+        </div>
+        <div class="hero__right" data-aos="fade-right">
+          <div class="hero__imgWrapper">
+            <img src="https://img.freepik.com/premium-photo/chef-cooking-busy-restaurant-kitchen-4xjpg_835197-14283.jpg"
+                 alt="Chef cooking">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR FORM -->
+  <section class="calculator-section" data-aos="fade-up">
+    <div class="container calculator__wrapper">
+
+      <div class="calc-row">
+        <label>Age<br><input type="number" id="age" min="0"></label>
+        <label>Gender<br>
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="calc-row">
+        <label>Weight (kg)<br><input type="number" id="weight" min="0" step="0.1"></label>
+        <label>Height (cm)<br><input type="number" id="height" min="0" step="0.1"></label>
+      </div>
+
+      <div class="calc-row">
+        <label>Activity Level<br>
+          <select id="activity">
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Lightly Active</option>
+            <option value="1.55">Moderately Active</option>
+            <option value="1.725">Very Active</option>
+          </select>
+        </label>
+        <label>Goal<br>
+          <select id="goal">
+            <option value="lose">Lose Weight</option>
+            <option value="maintain">Maintain</option>
+            <option value="gain">Gain Muscle</option>
+          </select>
+        </label>
+      </div>
+
+      <fieldset class="allergy-list">
+        <legend>Allergies (optional)</legend>
+        <label><input type="checkbox" value="gluten"> Gluten</label>
+        <label><input type="checkbox" value="dairy"> Dairy</label>
+        <label><input type="checkbox" value="nuts"> Nuts</label>
+        <label><input type="checkbox" value="soy"> Soy</label>
+        <label><input type="checkbox" value="egg"> Egg</label>
+      </fieldset>
+
+      <button class="btn primary-btn" onclick="calculate()">Calculate My Meals</button>
+
+      <div id="results" class="results-grid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__col1">
+          <div class="footer__logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ31GRZaO6qTFzQ3HeHXEhpW36iS5OuMZYqig&s"
+                 style="width:150px;height:auto;" alt="Lotus Feast">
+          </div>
+          <p class="footer__desc">
+            Fresh, aromatic Indian cuisine for every palate.
+          </p>
+          <div class="footer__socials">
+            <h4 class="footer__socials__title">Follow us</h4>
+            <ol class="footer__socials__list">
+              <li><a href="#"><svg>…facebook icon…</svg></a></li>
+              <li><a href="#"><svg>…instagram icon…</svg></a></li>
+              <li><a href="#"><svg>…twitter icon…</svg></a></li>
+            </ol>
+          </div>
+        </div>
+        <div class="footer__col2">
+          <h3 class="footer__text__title">Links</h3>
+          <ol class="footer__text">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./booking.html">Book Table</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ol>
+        </div>
+        <div class="footer__col3">
+          <h3 class="footer__text__title">Contact</h3>
+          <ol class="footer__text">
+            <li>+9803430860</li>
+            <li>lotusfeastcuisine@gmail.com</li>
+            <li>Ballantyne, NC</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="copyright">
+    <div class="container">
+      <p class="copyright__text">© 2025 Lotus Feast | All rights reserved</p>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./main.js"></script>
+  <script src="./calculator.js" defer></script>
+
+</body>
+</html>
